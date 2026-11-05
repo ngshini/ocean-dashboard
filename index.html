@@ -82,6 +82,77 @@ header.top p b{color:var(--txt)}
 .tabs button{background:none;border:none;color:var(--mut);font:600 12px 'Inter';padding:6px 13px;border-radius:999px;cursor:pointer}
 .tabs button.on{background:var(--txt);color:#0a1f36}
 
+/* ===== HERO OCEAN ROYALE — ảnh tràn viền + thẻ kính mờ ===== */
+.hero{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(143,170,204,.35);min-height:600px;
+  box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.hero>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,29,45,.34), rgba(15,29,45,.05) 34%, rgba(15,29,45,.16) 62%, rgba(4,14,30,.78))}
+.hero .inner{position:relative;padding:20px 22px 118px;display:flex;flex-direction:column;min-height:600px}
+.htop{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hlogo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hlogo .lg{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(15,29,45,.55);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+.hlogo svg{width:20px;height:20px;color:#fff}
+.hpills{margin:0 auto;display:flex;gap:5px;background:rgba(15,29,45,.42);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:5px;backdrop-filter:blur(12px)}
+.hpills a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer;transition:.2s}
+.hpills a svg{width:18px;height:18px}
+.hpills a:hover{background:rgba(255,255,255,.16)}
+.hpills a.on{background:#0f1d2d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.hsearch{display:flex;align-items:center;gap:8px;background:rgba(15,29,45,.42);border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;padding:9px 14px;width:210px;color:#e6eef4;backdrop-filter:blur(12px)}
+.hsearch svg{width:16px;height:16px}
+.hsearch input{background:none;border:none;outline:none;color:#fff;font:500 13px 'Inter';width:100%}
+.hsearch input::placeholder{color:rgba(230,238,244,.65)}
+.glass{background:linear-gradient(160deg, rgba(54,82,112,.55), rgba(28,50,75,.48));
+  border:1px solid rgba(255,255,255,.3);border-radius:19px;backdrop-filter:blur(14px);
+  box-shadow:0 20px 44px rgba(2,8,18,.35), inset 0 1px 0 rgba(255,255,255,.22)}
+.hmid{display:flex;gap:16px;margin-top:20px;align-items:flex-start}
+.aicard{width:308px;flex:none;padding:16px 17px;position:relative}
+.aicard h4{font-size:14.5px;font-weight:700;display:flex;align-items:center}
+.aicard h4 .x{margin-left:auto;color:rgba(255,255,255,.6);font-size:13px;cursor:pointer}
+.aicard .yimg{margin:11px 0 4px;border-radius:12px;overflow:hidden;height:104px}
+.aicard .yimg img{width:100%;height:100%;object-fit:cover;object-position:50% 68%}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:6.5px 0;font-size:12.6px;border-bottom:1px solid rgba(255,255,255,.09)}
+.kv span{color:rgba(230,238,244,.72)} .kv b{color:#fff;font-weight:600;text-align:right}
+.aistrip{margin-top:13px;background:#0f1d2d;border-radius:14px;padding:11px 13px;display:flex;gap:8px}
+.aistrip div{flex:1;text-align:center}
+.aistrip .ic2{font-size:14px}
+.aistrip b{display:block;font-size:14.5px;margin:2px 0 1px}
+.aistrip span{font-size:9.8px;color:var(--mut);letter-spacing:.4px;text-transform:uppercase}
+.fleet{width:308px;flex:none;margin-left:auto;padding:16px 17px}
+.fleet h4{font-size:14.5px;font-weight:700;display:flex;align-items:center}
+.fleet h4 .r{margin-left:auto;color:rgba(255,255,255,.65);font-size:14px}
+.frow{display:flex;align-items:center;gap:11px;padding:9.5px 0;border-top:1px solid rgba(255,255,255,.1)}
+.frow:first-of-type{border-top:none;margin-top:5px}
+.frow b{font-size:13px;display:block;line-height:1.25}
+.frow span{font-size:11px;color:rgba(230,238,244,.7)}
+.frow .stt{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;margin-top:2px}
+.frow .stt i{width:7.5px;height:7.5px;border-radius:50%}
+.frow img{width:74px;height:44px;object-fit:cover;border-radius:9px;margin-left:auto;border:1px solid rgba(255,255,255,.22)}
+/* Hàng thẻ chồng mép dưới hero — Booking */
+.orow{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:16px;margin:-102px 22px 0;position:relative;z-index:4}
+.ocard{padding:16px 18px}
+.ocard h5{font-size:13.5px;font-weight:700;display:flex;align-items:center}
+.ocard h5 .r{margin-left:auto;font-size:11px;color:rgba(230,238,244,.75);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+.share{display:flex;gap:14px;margin-top:12px}
+.share div b{font-size:19px;display:flex;align-items:center;gap:6px}
+.share div b i{width:8px;height:8px;border-radius:50%}
+.share div span{font-size:10.8px;color:rgba(230,238,244,.72)}
+.dotsm{display:grid;grid-template-columns:repeat(14,1fr);gap:7px;margin-top:14px}
+.dotsm i{border-radius:50%;background:radial-gradient(circle at 32% 30%, #ffffff, #8faacc 70%);display:block;justify-self:center}
+#miniChart{width:100%;height:104px;display:block;margin-top:8px}
+.today{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.today div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:10px 12px}
+.today span{font-size:10.6px;color:rgba(230,238,244,.75);display:block}
+.today b{font-size:20px;letter-spacing:-.4px}
+.today canvas{float:right;margin-top:4px;width:54px;height:19px}
+.secttl{display:flex;align-items:baseline;gap:12px;margin:26px 0 2px;flex-wrap:wrap}
+.secttl h2{font-size:22px;font-weight:800;letter-spacing:-.4px}
+.secttl h2 em{font-style:normal;color:var(--cyan)}
+.secttl p{color:var(--mut);font-size:13px}
+@media(max-width:1180px){.hmid{flex-direction:column}.fleet{margin-left:0}.orow{grid-template-columns:1fr;margin:-70px 14px 0}.hero .inner{padding-bottom:88px}}
+@media(max-width:640px){.aicard,.fleet{width:100%}.hpills{display:none}.hsearch{width:150px}}
+
 /* ===== KPI ===== */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
 .kpi{position:relative;overflow:hidden;transition:.25s}
@@ -121,7 +192,7 @@ header.top p b{color:var(--txt)}
 .tidestrip i.hi{background:linear-gradient(180deg,var(--gold),#92600f)}
 
 /* ===== HÀNG 3: FEATURED / SPECIES / AI ===== */
-.row3{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px;margin-top:16px}
+.row3{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;margin-top:16px}
 .feat{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:342px;box-shadow:0 18px 40px rgba(0,0,0,.3)}
 .feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
 .feat .shade{position:absolute;inset:0;background:linear-gradient(185deg, rgba(4,14,30,.08) 40%, rgba(3,10,22,.88) 88%)}
@@ -230,17 +301,84 @@ tbody tr{transition:.15s} tbody tr:hover{background:rgba(56,189,248,.05)}
 
   <!-- MAIN -->
   <div class="main">
-    <header class="top">
-      <div>
-        <h1>Dashboard</h1>
-        <p>Chào thuyền trưởng <b>Sinh</b> — đây là tổng quan biển hôm nay của bạn. <span class="live"><i></i>TRỰC TIẾP <span id="clock">--:--</span></span></p>
+    <!-- HERO — OCEAN ROYALE: ảnh tràn viền + kính mờ -->
+    <section class="hero">
+      <img class="bg" src="assets/yacht-hero.jpg" alt="Siêu du thuyền Ocean Royale trên biển">
+      <div class="veil"></div>
+      <div class="inner">
+        <div class="htop">
+          <div class="hlogo"><span class="lg"><svg class="ic"><use href="#i-anchor"/></svg></span>Ocean Royale</div>
+          <nav class="hpills" id="hpills">
+            <a class="on"><svg class="ic"><use href="#i-grid"/></svg></a>
+            <a><svg class="ic"><use href="#i-cal"/></svg></a>
+            <a><svg class="ic"><use href="#i-boat"/></svg></a>
+            <a><svg class="ic"><use href="#i-anchor"/></svg></a>
+            <a><svg class="ic"><use href="#i-fish"/></svg></a>
+            <a><svg class="ic"><use href="#i-chart"/></svg></a>
+            <a><svg class="ic"><use href="#i-waves"/></svg></a>
+          </nav>
+          <div class="hsearch"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="text" placeholder="Tìm tàu, tuyến, điểm câu…"></div>
+          <div class="ibtn" style="background:rgba(15,29,45,.42);border-color:rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(12px)"><svg class="ic"><use href="#i-bell"/></svg><span class="dot"></span></div>
+        </div>
+
+        <div class="hmid">
+          <div class="glass aicard">
+            <h4>AI Charter Analysis <span class="x">✕</span></h4>
+            <div class="yimg"><img src="assets/yacht-hero.jpg" alt="Ocean Royale I"></div>
+            <div class="kv"><span>Điểm đi</span><b>Bến Royale Marina</b></div>
+            <div class="kv"><span>Điểm đến</span><b>Đảo Ngọc</b></div>
+            <div class="kv"><span>Thời lượng</span><b>6 giờ</b></div>
+            <div class="kv"><span>Quãng đường</span><b>185 hải lý</b></div>
+            <div class="kv" style="border-bottom:none"><span>Nhiên liệu ước tính</span><b>320 lít</b></div>
+            <div class="aistrip">
+              <div><span class="ic2">🔶</span><b>Calm</b><span>Điều kiện biển</span></div>
+              <div><span class="ic2">🟢</span><b>12</b><span>Du thuyền rảnh</span></div>
+              <div><span class="ic2">🔷</span><b>92%</b><span>Điểm thời tiết</span></div>
+            </div>
+          </div>
+
+          <div class="glass fleet">
+            <h4>Fleet Status <span class="r">↗</span></h4>
+            <div class="frow"><div><b>Ocean Majesty</b><span>Luxury Motor Yacht</span><div class="stt" style="color:var(--green)"><i style="background:var(--green)"></i>Available</div></div><img src="assets/yacht-hero.jpg" style="object-position:50% 78%" alt=""></div>
+            <div class="frow"><div><b>Blue Horizon</b><span>Sport Yacht</span><div class="stt" style="color:var(--gold)"><i style="background:var(--gold)"></i>Chartered</div></div><img src="assets/yacht-hero.jpg" style="object-position:64% 60%" alt=""></div>
+            <div class="frow"><div><b>Royal Escape</b><span>Super Yacht</span><div class="stt" style="color:#7dd3fc"><i style="background:#7dd3fc"></i>Maintenance</div></div><img src="assets/yacht-hero.jpg" style="object-position:38% 55%" alt=""></div>
+            <div class="frow"><div><b>Sea Pearl</b><span>Luxury Cruiser</span><div class="stt" style="color:var(--gold)"><i style="background:var(--gold)"></i>Chartered</div></div><img src="assets/yacht-hero.jpg" style="object-position:55% 82%" alt=""></div>
+            <div class="frow"><div><b>Azure Dream</b><span>Luxury Catamaran</span><div class="stt" style="color:var(--green)"><i style="background:var(--green)"></i>Available</div></div><img src="assets/yacht-hero.jpg" style="object-position:47% 40%" alt=""></div>
+          </div>
+        </div>
       </div>
-      <div class="topright">
-        <div class="search"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="text" placeholder="Tìm tàu, tuyến, điểm câu…"></div>
-        <div class="ibtn"><svg class="ic"><use href="#i-bell"/></svg><span class="dot"></span></div>
-        <div class="who"><div class="av">NS</div><div class="inf"><b>Ngọc Sinh</b><span>Quản lý đội tàu</span></div></div>
+
+      <div class="orow">
+        <div class="glass ocard">
+          <h5>Booking Overview <span class="r">Tháng này ▾</span></h5>
+          <div class="share">
+            <div><b><i style="background:var(--gold)"></i>64%</b><span>Yacht Charters</span></div>
+            <div><b><i style="background:var(--cyan)"></i>22%</b><span>Marina Bookings</span></div>
+            <div><b><i style="background:var(--teal)"></i>14%</b><span>Memberships</span></div>
+          </div>
+          <div class="dotsm" id="dotMatrix"></div>
+        </div>
+        <div class="glass ocard">
+          <h5>Booking Analytics <span class="r">Năm nay ▾</span></h5>
+          <canvas id="miniChart"></canvas>
+          <div style="display:flex;justify-content:space-between;font-size:10.5px;color:rgba(230,238,244,.65);margin-top:2px"><span>Th1</span><span>Th2</span><span>Th3</span><span>Th4</span><span>Th5</span><span>Th6</span></div>
+        </div>
+        <div class="glass ocard">
+          <h5>Booking Overview <span class="r">Hôm nay ▾</span></h5>
+          <div class="today">
+            <div><span>Đặt chỗ hôm nay</span><b>124</b><canvas class="spark" data-color="#34d399" data-vals="8,12,10,16,20,24"></canvas></div>
+            <div><span>Charter đang chạy</span><b>86</b><canvas class="spark" data-color="#38bdf8" data-vals="10,9,14,13,18,22"></canvas></div>
+            <div><span>Yêu cầu chờ duyệt</span><b>32</b><canvas class="spark" data-color="#e3bc6d" data-vals="16,14,15,11,12,10"></canvas></div>
+            <div><span>Bến còn trống</span><b>412</b><canvas class="spark" data-color="#34d399" data-vals="6,10,9,14,17,21"></canvas></div>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
+
+    <div class="secttl">
+      <h2>Fish Hunting — <em>hiệu suất đội tàu cá</em></h2>
+      <p>Chào thuyền trưởng <b style="color:var(--txt)">Sinh</b> · <span class="live"><i></i>TRỰC TIẾP <span id="clock">--:--</span></span> · Phần phân tích đánh bắt theo mẫu Fish Hunting, nối tiếp phần du thuyền ở trên.</p>
+    </div>
 
     <!-- KPI -->
     <section class="kpis">
@@ -312,23 +450,8 @@ tbody tr{transition:.15s} tbody tr:hover{background:rgba(56,189,248,.05)}
       </div>
     </section>
 
-    <!-- FEATURED + SPECIES + AI -->
+    <!-- SPECIES + AI -->
     <section class="row3">
-      <div class="feat">
-        <img src="assets/yacht-hero.jpg" alt="Du thuyền Ocean Royale I trên biển lúc hoàng hôn">
-        <div class="shade"></div>
-        <div class="in">
-          <span class="tag">DU THUYỀN NỔI BẬT · OCEAN ROYALE</span>
-          <h4>Ocean Royale I</h4>
-          <div class="meta"><span>Azimut 78 Fly</span><span>24 khách</span><span>★ 4.9 · 212 đánh giá</span><span>Đảo Ngọc</span></div>
-          <div class="brow">
-            <div class="price"><b>$4,850</b><span>mỗi chuyến charter</span></div>
-            <div class="occ"><span>Đã đặt tháng này · 96%</span><div class="bar"><i></i></div></div>
-            <button class="cta" onclick="aiAsk('Doanh thu charter tháng này thế nào?')">Đặt charter</button>
-          </div>
-        </div>
-      </div>
-
       <div class="panel species">
         <h3><svg class="ic"><use href="#i-fish"/></svg>Loài cá dẫn đầu <span class="r">Tuần này</span></h3>
         <div class="srow"><img src="assets/thumb-tuna.jpg" alt="Cá ngừ đại dương"><div><b>Cá ngừ đại dương</b><span>909 kg · Bãi San Hô Đỏ</span></div><div class="bar"><i style="width:82%;background:linear-gradient(90deg,#0284c7,var(--cyan))"></i></div><div class="pc" style="color:var(--cyan)">32%</div></div>
@@ -365,7 +488,7 @@ tbody tr{transition:.15s} tbody tr:hover{background:rgba(56,189,248,.05)}
       <p id="noRow" style="display:none;color:var(--mut);font-size:13px;padding:14px 4px">Không có chuyến nào khớp tìm kiếm.</p>
     </section>
 
-    <p class="foot">Aqua Royale — bản v2 trau chuốt theo đúng 2 mẫu Dribbble: Fish Hunting Dashboard (nền #040E1E, thẻ #173150, sidebar icon, biểu đồ hiệu suất + bản đồ tàu + loài cá + AI) &amp; Ocean Royale Yacht Analytics (du thuyền nổi bật, doanh thu gold).<br>Ảnh du thuyền và loài cá là ảnh dựng cho bản mô phỏng này · Số liệu là dữ liệu mẫu để trình diễn.</p>
+    <p class="foot">Aqua Royale v3 — gộp đúng cấu trúc 2 mẫu gốc: nửa trên là Ocean Royale (ảnh du thuyền tràn viền, thẻ kính mờ AI Charter Analysis + Fleet Status + hàng Booking chồng mép, palette #0F1D2D / vàng đồng #A8833E), nửa dưới là Fish Hunting (nền #040E1E, thẻ #173150, sidebar icon, biểu đồ hiệu suất + bản đồ tàu + loài cá + AI).<br>Ảnh du thuyền và loài cá là ảnh dựng cho bản mô phỏng này · Số liệu là dữ liệu mẫu để trình diễn.</p>
   </div>
 </div>
 
@@ -514,6 +637,34 @@ function aiAsk(q){
 document.getElementById('aiSend').onclick=()=>aiAsk(document.getElementById('aiInput').value);
 document.getElementById('aiInput').addEventListener('keydown',e=>{if(e.key==='Enter')aiAsk(e.target.value)});
 document.querySelectorAll('[data-aiq]').forEach(b=>b.onclick=()=>aiAsk(b.dataset.aiq));
+
+/* ============ HERO: DOT MATRIX + MINI ANALYTICS ============ */
+(function(){
+  const dm=document.getElementById('dotMatrix');
+  if(dm){ let h=''; const sizes=[5,7,9,6,12,5,8,15,6,9,5,11,7,6];
+    for(let i=0;i<42;i++){ const s=sizes[i%sizes.length]; h+=`<i style="width:${s}px;height:${s}px;opacity:${.45+((i*37)%50)/100}"></i>`; }
+    dm.innerHTML=h; }
+  const cv=document.getElementById('miniChart');
+  if(cv){ const dpr=window.devicePixelRatio||1, W=cv.clientWidth,H=104;
+    cv.width=W*dpr; cv.height=H*dpr; const x=cv.getContext('2d'); x.scale(dpr,dpr);
+    const data=[86,118,96,127,88,68,104,118,92,127,110,118];
+    const mx=140, pts=data.map((v,i)=>[10+i*(W-20)/(data.length-1), H-10-(v/mx)*(H-24)]);
+    x.strokeStyle='rgba(255,255,255,.1)';
+    for(let i=1;i<=3;i++){ const y=(H-14)*i/4; x.beginPath(); x.moveTo(6,y); x.lineTo(W-6,y); x.stroke(); }
+    x.beginPath(); pts.forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));
+    x.strokeStyle='rgba(255,255,255,.9)'; x.lineWidth=1.6; x.stroke();
+    // đoạn giảm màu đỏ như mẫu gốc
+    x.beginPath(); x.moveTo(pts[4][0],pts[4][1]); x.lineTo(pts[5][0],pts[5][1]);
+    x.strokeStyle='#f87171'; x.lineWidth=2.2; x.stroke();
+    x.beginPath(); x.moveTo(pts[1][0],pts[1][1]); x.lineTo(pts[2][0],pts[2][1]);
+    x.strokeStyle='#f87171'; x.lineWidth=2.2; x.stroke();
+    x.font='700 10px Inter'; x.fillStyle='#fff';
+    x.fillText('127', pts[3][0]-8, pts[3][1]-8); x.fillText('68 · -12%', pts[5][0]-14, pts[5][1]+16);
+  }
+  document.querySelectorAll('#hpills a').forEach(a=>a.addEventListener('click',()=>{
+    document.querySelectorAll('#hpills a').forEach(y=>y.classList.remove('on')); a.classList.add('on');
+  }));
+})();
 
 /* ============ ĐỒNG HỒ ============ */
 function tickClock(){ document.getElementById('clock').textContent=new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'}); }
