@@ -159,6 +159,19 @@ body{
 .dlegend i{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px}
 .dlegend b{float:right;margin-left:16px}
 
+/* AI ASSISTANT — điểm riêng của mẫu Fish Hunting gốc */
+.aiwrap{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-top:14px}
+@media(max-width:900px){.aiwrap{grid-template-columns:1fr}}
+.airec{background:rgba(45,212,191,.07);border:1px solid rgba(45,212,191,.25);border-radius:13px;padding:13px 15px;font-size:13.3px;line-height:1.65;color:#d9f2ee}
+.airec b{color:var(--teal)}
+.aichips{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.aichat{display:flex;flex-direction:column;gap:9px}
+.ailog{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:13px;padding:12px;height:148px;overflow-y:auto;font-size:13px;line-height:1.6}
+.ailog .me{color:var(--gold)} .ailog .bot{color:#cfeef5}
+.airow{display:flex;gap:9px}
+.airow input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:10px 15px;color:#fff;outline:none;font-size:13.5px}
+.airow button{background:var(--cyan);color:#03222b;border:none;width:42px;height:42px;border-radius:50%;font-size:16px;cursor:pointer;flex:0 0 42px}
+
 /* BẢNG */
 .tablewrap{margin-top:14px;overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px;min-width:760px}
@@ -363,6 +376,32 @@ td .tp{font-size:10.8px;font-weight:800;padding:3px 8px;border-radius:99px}
       </div>
     </section>
 
+    <!-- AI ASSISTANT (từ mẫu Fish Hunting gốc) -->
+    <section class="aiwrap">
+      <div class="panel" style="margin:0">
+        <h3>🤖 Trợ lý AI Aqua <span class="r">Gợi ý theo sonar &amp; lịch charter</span></h3>
+        <div class="airec" style="margin-top:12px">
+          <b>Khuyến nghị hôm nay:</b> Bãi <b>San Hô Đỏ</b> đang có hoạt động cá ngừ cao nhất (92%, độ sâu 42 m) — nên ưu tiên đội SH-09 ra khơi trước 05:30.
+          Chiều nay triều lên 2.4 m lúc 14:20, hợp cho <b>Royale Sunset</b> chạy tour hoàng hôn — hiện đã lấp đầy 92%, cân nhắc mở thêm 1 chuyến 17:00.
+        </div>
+        <div class="aichips">
+          <button class="chip" data-aiq="Điểm nào cá ngừ dày nhất hôm nay?">🎣 Điểm cá ngừ dày nhất?</button>
+          <button class="chip" data-aiq="Doanh thu charter tháng này thế nào?">🛥️ Doanh thu charter?</button>
+          <button class="chip" data-aiq="Thủy triều chiều nay ra sao?">🌊 Thủy triều chiều nay?</button>
+        </div>
+      </div>
+      <div class="panel aichat" style="margin:0">
+        <h3>💬 Hỏi trợ lý</h3>
+        <div class="ailog" id="aiLog">
+          <div class="bot">🤖 <b>Aqua AI:</b> Chào thuyền trưởng Sinh. Hỏi mình về bãi cá, doanh thu charter hoặc thủy triều — mình trả lời theo dữ liệu trên dashboard này.</div>
+        </div>
+        <div class="airow">
+          <input id="aiInput" type="text" placeholder="Hỏi AI bất cứ điều gì về biển hôm nay…">
+          <button id="aiSend" title="Gửi">➤</button>
+        </div>
+      </div>
+    </section>
+
     <!-- BẢNG GỘP -->
     <section class="panel tablewrap">
       <h3>🧾 Chuyến đi &amp; mẻ cá gần đây
@@ -531,6 +570,27 @@ setInterval(()=>{ document.getElementById('clock').textContent=new Date().toLoca
 document.getElementById('clock').textContent=new Date().toLocaleTimeString('vi-VN');
 let fishKg=2840;
 setInterval(()=>{ fishKg+=Math.floor(Math.random()*4); document.getElementById('kFish').innerHTML=fishKg.toLocaleString('vi-VN')+' <small>kg</small>'; },7000);
+/* ================= AI ASSISTANT ================= */
+function aiAnswer(q){
+  q=q.toLowerCase();
+  if(q.includes('ngừ')||q.includes('cá')||q.includes('bãi')||q.includes('điểm')) return 'Bãi San Hô Đỏ dày cá ngừ nhất hôm nay: hoạt động 92%, đàn cá ở độ sâu 42 m, giờ vàng 05:30–08:00. Đội SH-09 đang ở đó và đã đạt 486 kg.';
+  if(q.includes('doanh thu')||q.includes('charter')||q.includes('du thuyền')||q.includes('yacht')) return 'Doanh thu charter tháng này đạt $128,450, tăng 18.2%. Ocean Royale I dẫn đầu với $32,480 và 96% lấp đầy — nên giữ giá cuối tuần, đừng giảm.';
+  if(q.includes('triều')||q.includes('sóng')||q.includes('thời tiết')||q.includes('gió')) return 'Chiều nay triều lên đỉnh 2.4 m lúc 14:20, sóng êm 0.6 m, gió Đông Bắc 14 km/h — đủ đẹp cho cả tour hoàng hôn lẫn tàu về bến.';
+  if(q.includes('mực')) return 'Vùng mực San Hô lên đèn mạnh về đêm: sản lượng 3 đêm gần nhất tăng 14%, giờ tốt nhất 19:00–23:00 ở độ sâu 55 m.';
+  return 'Theo dữ liệu hôm nay: 9/14 bãi cá đang hoạt động, 342 lượt đặt du thuyền, sản lượng tuần 2,840 kg. Bạn hỏi cụ thể về cá ngừ, doanh thu charter hay thủy triều để mình đào sâu hơn nhé.';
+}
+function aiAsk(q){
+  if(!q.trim()) return;
+  const log=document.getElementById('aiLog');
+  log.innerHTML+=`<div class="me" style="margin-top:8px">🧑 <b>Sinh:</b> ${q.replace(/</g,'&lt;')}</div>`;
+  log.innerHTML+=`<div class="bot" style="margin-top:4px">🤖 <b>Aqua AI:</b> ${aiAnswer(q)}</div>`;
+  log.scrollTop=log.scrollHeight;
+  document.getElementById('aiInput').value='';
+}
+document.getElementById('aiSend').onclick=()=>aiAsk(document.getElementById('aiInput').value);
+document.getElementById('aiInput').addEventListener('keydown',e=>{ if(e.key==='Enter') aiAsk(e.target.value); });
+document.querySelectorAll('[data-aiq]').forEach(b=>b.onclick=()=>aiAsk(b.dataset.aiq));
+
 /* đường tuyến trên bản đồ chảy */
 setInterval(()=>{ const r1=document.getElementById('route1'); if(r1) r1.style.strokeDashoffset=(Date.now()/60)%30; },50);
 </script>
